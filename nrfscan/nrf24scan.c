@@ -407,7 +407,8 @@ static uint8_t load_settings_file(Stream* file_stream) {
   return err;
 }
 
-static void input_callback(InputEvent* input_event, FuriMessageQueue* event_queue) {
+static void input_callback(InputEvent* input_event, void* context) {
+  FuriMessageQueue* event_queue = context;
   furi_assert(event_queue);
   PluginEvent event = {.type = EventTypeKey, .input = *input_event};
   furi_message_queue_put(event_queue, &event, FuriWaitForever);
