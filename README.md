@@ -11,7 +11,12 @@ cd nrfsniff
 ufbt launch
 ```
 
-Last built with the OFW version `0.89.0`.
+Last built with the OFW version `1.4.3` (January 2026).
+
+## Fork Notes
+This fork updates the code to compile with the latest official firmware (1.4.3). Changes include:
+- Updated `FuriHalSpiBusHandle*` to `const FuriHalSpiBusHandle*` in the NRF24 library to match the new SDK API
+- Fixed `input_callback` signature to use `void* context` parameter
 
 ## Warning
 This repo contains three Flipper Zero apps that utilize the NRF24 driver to sniff for NRF24 addresses and perform mousejack attacks. These apps are for **educational purposes** only. Please use this code responsibly and only use these apps on your own equipment.
